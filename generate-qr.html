@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peter Pet - Digital Card</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>QR προς τη σελίδα μου</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+  <style>
+    body {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    canvas {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
 </head>
 <body>
-    <div class="card">
-        <img src="assets/profile.png" alt="Peter Pet" class="profile-pic">
-        <h1>Peter Pet</h1>
-        <h2>Software Engineer</h2>
-        <p><a href="mailto:peter@gmail.com">peter@gmail.com</a></p>
-        <p><a href="tel:+306939999999">+30 6939999999</a></p>
-        <div class="socials">
-            <p><a href="https://www.linkedin.com/" target="_blank"><img src="assets/linkedin.png" class="icon"> LinkedIn</a></p>
-            <p><a href="https://github.com/petran151312" target="_blank"><img src="assets/github.png" class="icon"> GitHub</a></p>
-            <p><a href="https://www.instagram.com/" target="_blank"><img src="assets/instagram.png" class="icon"> Instagram</a></p>
-            <p><a href="https://www.facebook.com/" target="_blank"><img src="assets/facebook.png" class="icon"> Facebook</a></p>
-        </div>
 
-        <!-- Τίτλος και σύνδεσμος για άνοιγμα της επαφής -->
-        <h3><a href="contact.vcf">📇 Προσθήκη Επαφής: Πάτα εδώ για αποθήκευση</a></h3>
+  <!-- Το QR code θα εμφανιστεί εδώ -->
+  <canvas id="qr-code"></canvas>
 
-        <!-- Εσωτερικό QR Code για αποθήκευση επαφής -->
-        <img src="assets/contact_qr_code.png" alt="QR για Επαφή" class="qr-img" style="width: 160px; height: 160px; margin-top: 1em;">
-    </div>
+  <script>
+    const qr = new QRious({
+      element: document.getElementById('qr-code'),
+      value: 'https://petran151312.github.io/qrworkk/',
+      size: 300,
+      background: 'black',
+      foreground: 'white'
+    });
+  </script>
 
-    <!-- QR κάτω δεξιά που οδηγεί στη σελίδα -->
-    <a href="https://petran151312.github.io/qrworkk/" class="qr-code-link" target="_blank">
-        <img src="assets/qr-code.png" alt="QR Code" class="qr-code" style="position: fixed; bottom: 10px; right: 10px; width: 80px;">
-    </a>
 </body>
 </html>
