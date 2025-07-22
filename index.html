@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="card">
-        <img src="assets/profile.jpg" alt="Peter Pet" class="profile-pic">
+        <img src="assets/profile.png" alt="Peter Pet" class="profile-pic">
         <h1>Peter Pet</h1>
         <h2>Software Engineer</h2>
         <p><a href="mailto:peter@gmail.com">peter@gmail.com</a></p>
@@ -19,30 +19,10 @@
             <p><a href="https://www.instagram.com/" target="_blank"><img src="assets/instagram.png" class="icon"> Instagram</a></p>
             <p><a href="https://www.facebook.com/" target="_blank"><img src="assets/facebook.png" class="icon"> Facebook</a></p>
         </div>
-        <a id="addContactBtn" href="#" class="contact-btn">➕ Προσθήκη Επαφής</a>
+        <a href="contact.vcf" class="contact-btn" download>➕ Προσθήκη Επαφής</a>
     </div>
     <a href="https://petran151312.github.io/qrworkk/" class="qr-code-link" target="_blank">
-        <img src="qr-code.png" alt="QR Code" class="qr-code">
+        <img src="assets/qr-code.png" alt="QR Code" class="qr-code">
     </a>
-
-    <script>
-        document.getElementById('addContactBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            const vcfBlob = new Blob([`BEGIN:VCARD
-VERSION:3.0
-FN:Peter Pet
-TEL;TYPE=CELL:+306939999999
-EMAIL:peter@gmail.com
-END:VCARD`], { type: 'text/vcard' });
-
-            const url = URL.createObjectURL(vcfBlob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'peter.vcf';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        });
-    </script>
 </body>
 </html>
