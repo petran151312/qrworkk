@@ -45,12 +45,12 @@ body::before {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px); /* Ελαφρύ θόλωμα πίσω */
 }
+
 .card h1,
 .card h2,
 .card h3 {
   color: white;
 }
-
 
 .profile-pic {
   width: 120px;
