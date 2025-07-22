@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Δημιουργία QR Για contact.vcf</title>
+  <title>Peter Pet - Digital Contact</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,37 +15,45 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
+      text-align: center;
     }
-    canvas {
+    h1 {
+      margin-bottom: 0.5em;
+    }
+    .qr-img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 1em;
       background: white;
       padding: 10px;
       border-radius: 10px;
     }
-    a {
-      margin-top: 20px;
-      color: #0ff;
+    .instructions {
+      font-size: 1rem;
+      max-width: 300px;
+    }
+    .contact-title {
+      font-size: 1.2rem;
+      margin: 1em 0 0.5em;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Γεννήστε QR Code για Προσθήκη Επαφής</h1>
-  <canvas id="qr"></canvas>
-  <a id="downloadLink" download="contact_qr_code.png">📥 Κατεβάστε το QR</a>
+  <h1>Προσθήκη Επαφής</h1>
+  <p class="instructions">
+    Πάτα ή σκάναρε το QR για να αποθηκεύσεις την επαφή του Peter στο κινητό σου.
+  </p>
+  <canvas id="qr" class="qr-img"></canvas>
 
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
   <script>
     const canvas = document.getElementById('qr');
     const vcfUrl = 'https://petran151312.github.io/qrworkk/contact.vcf';
 
-    QRCode.toCanvas(canvas, vcfUrl, { width: 256 }, function (error) {
+    QRCode.toCanvas(canvas, vcfUrl, { width: 200 }, function (error) {
       if (error) console.error(error);
       else console.log('QR code generated!');
-    });
-
-    // Create download link
-    canvas.toBlob(function(blob) {
-      const url = URL.createObjectURL(blob);
-      document.getElementById('downloadLink').href = url;
     });
   </script>
 </body>
