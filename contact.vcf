@@ -3,4 +3,5 @@ VERSION:3.0
 FN:Peter Pet
 TEL;TYPE=CELL:+306939999999
 EMAIL:peter@gmail.com
+PHOTO;VALUE=URI:https://petran151312.github.io/qrworkk/assets/profile.png
 END:VCARD
