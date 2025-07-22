@@ -53,6 +53,15 @@ body {
     border-radius: 5px;
     text-decoration: none;
 }
+a {
+    color: #ccc; /* ή ό,τι απόχρωση θες */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #fff; /* Προαιρετικό: πιο έντονο στο hover */
+  }
+  
 .contact-btn:hover {
     background-color: #555;
 }
