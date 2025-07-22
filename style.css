@@ -37,6 +37,12 @@ body {
     margin-right: 8px;
     filter: invert(1);
 }
+.social-label {
+    font-weight: normal;
+    color: #ddd;
+    text-decoration: none;
+  }
+  
 .contact-btn {
     display: inline-block;
     margin-top: 1em;
