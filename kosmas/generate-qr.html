@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>QR προς τη σελίδα μου</title>
+  <title>QR - Kosmas Contact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+  
+  <!-- ΝΕΑ βιβλιοθήκη -->
+  <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+
   <style>
     body {
       background-color: #000;
@@ -14,7 +17,8 @@
       height: 100vh;
       margin: 0;
     }
-    canvas {
+
+    #qr {
       width: 300px;
       height: 300px;
     }
@@ -22,19 +26,30 @@
 </head>
 <body>
 
-  <!-- Το QR code θα εμφανιστεί εδώ -->
-  <canvas id="qr-code"></canvas>
+  <div id="qr"></div>
 
   <script>
-    const qr = new QRious({
-      element: document.getElementById('qr-code'),
-      value: 'https://petran151312.github.io/qrworkk/kosmas/',
-      size: 300,
-      background: 'black',
-      foreground: 'white'
+    const qrCode = new QRCodeStyling({
+      width: 300,
+      height: 300,
+      data: "https://petran151312.github.io/qrworkk/kosmas/",
+      image: "contactlogo.png", // προσοχή: ίδια διαδρομή!
+      imageOptions: {
+        crossOrigin: "anonymous",
+        margin: 4,              // λευκό περιθώριο γύρω από το icon
+        imageSize: 0.2          // 20% του QR 
+      },
+      dotsOptions: {
+        color: "#ffffff",       // χρώμα των dot (λευκό για να δένει με logo)
+        type: "rounded"         // 
+      },
+      backgroundOptions: {
+        color: "#000000"        // μαύρο φόντο
+      }
     });
+
+    qrCode.append(document.getElementById("qr"));
   </script>
-  
 
 </body>
 </html>
