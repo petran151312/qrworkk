@@ -150,17 +150,23 @@ a:hover {
 
 @media (max-width: 600px) {
   body::before {
-    background-size: 90%; /* ακόμα πιο έντονο σε κινητό */
+    background-size: 90%; 
     background-position: bottom center;
-    opacity: 0.1; /* λίγο πιο εμφανές αλλά όχι επιθετικό */
+    opacity: 0.1;
   }
 
-    .logo-header img {
+  .logo-header img {
     height: 28px;
-    }
+  }
+
+  .logo-header {
+    top: -18px; /*  */
+  }
 
   .card {
     background-color: rgba(0, 0, 0, 0.88);
     backdrop-filter: blur(3px);
+    padding-top: 1em; /* Μειωμένο padding top */
+    margin-top: 0.5em; /* Μικρή απόσταση από πάνω */
   }
 }
