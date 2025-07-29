@@ -36,6 +36,8 @@ body::before {
   text-align: center;
   background-color: rgba(26, 26, 26, 0.9); /* πιο διάφανο */
   padding: 2em;
+  padding-top: 1.5em; 
+  margin-top: 1em;
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
@@ -129,7 +131,7 @@ a:hover {
 
 .logo-header {
   position: absolute;
-  top: 20px;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -154,7 +156,7 @@ a:hover {
   }
 
     .logo-header img {
-    height: 32px;
+    height: 28px;
     }
 
   .card {
