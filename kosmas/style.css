@@ -127,6 +127,23 @@ a:hover {
   height: 80px;
 }
 
+.logo-header {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6); /* Optional: για να διαβάζεται πάντα */
+  padding: 6px 12px;
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+}
+
+.logo-header img {
+  height: 40px;
+  width: auto;
+  opacity: 0.95;
+}
 
 
 @media (max-width: 600px) {
@@ -135,6 +152,10 @@ a:hover {
     background-position: bottom center;
     opacity: 0.1; /* λίγο πιο εμφανές αλλά όχι επιθετικό */
   }
+
+    .logo-header img {
+    height: 32px;
+    }
 
   .card {
     background-color: rgba(0, 0, 0, 0.88);
