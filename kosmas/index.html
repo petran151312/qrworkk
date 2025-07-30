@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kosmas Nafpliotis - Digital Card</title>
   <link rel="stylesheet" href="style.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+ <!--   <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>   -->
+  <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+
 </head>
 <body>
 <header class="logo-header">
@@ -38,22 +40,36 @@
 </h3>
 
  <!--   -->
-    <canvas id="qr-embedded-vcard" style="margin-top: 1em;"></canvas>
+    <div id="qr-embedded-vcard" style="margin-top: 1em;"></div>
     
   </div>
 
-  <script>
-const qr = new QRious({
-  element: document.getElementById('qr-embedded-vcard'),
-  value: `BEGIN:VCARD\nVERSION:3.0\nFN:Κοσμάς Ναυπλιώτης\nTEL;TYPE=CELL:306979913279\nEMAIL:nafpliotis@sspc.gr\nPHOTO;VALUE=URL:https://petran151312.github.io/qrworkk/kosmas/assets/profile.png\nEND:VCARD`,
-  size: 150,
-  background: '#000',
-  foreground: '#fff'
-});
+ <script>
+  window.onload = () => {
+    const qrCode = new QRCodeStyling({
+      width: 150,
+      height: 150,
+      data: `BEGIN:VCARD\nVERSION:3.0\nFN:Kosmas Nafpliotis\nTEL;TYPE=CELL:306979913279\nEMAIL:nafpliotis@sspc.gr\nPHOTO;VALUE=URL:https://petran151312.github.io/qrworkk/kosmas/contactlogo.png\nEND:VCARD`,
+      image: "contactlogo.png",
+      imageOptions: {
+        crossOrigin: "anonymous",
+        margin: -1,
+        imageSize: 0.35
+      },
+      dotsOptions: {
+        color: "#ffffff",
+        type: "rounded"
+      },
+      backgroundOptions: {
+        color: "#000000"
+      }
+    });
+
+    qrCode.append(document.getElementById("qr-embedded-vcard"));
+  };
+</script>
 
 
-
-  </script>
 </body>
 
 </html>
